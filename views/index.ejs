@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title><%= title %></title>
 </head>
 <body>
-    This is the index.
+    <% messages.map((message) => { %>
+        <div class="messageCard">
+            <div class="date"><%= message.added %></div>
+            <div class="user"><%= message.user %></div>
+            <div class="text"><%= message.text %></div>
+        </div>
+    <% }) %>
 </body>
 </html>
