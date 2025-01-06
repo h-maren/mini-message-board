@@ -8,9 +8,11 @@
 <body>
     <% messages.map((message) => { %>
         <div class="messageCard">
+            <%= message.id %>
             <div class="date"><%= message.added %></div>
             <div class="user"><%= message.user %></div>
             <div class="text"><%= message.text %></div>
+            <a href="/message/<%= message.id %>">Open message in new window</a>
         </div>
     <% }) %>
     <div class="newMessageLink">
