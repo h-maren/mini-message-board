@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Form</title>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
+<header>
+    <%= title %>
+</header>
 <body>
     <form method="POST" action="/new">
         <label for="user">User: </label>
-        <input type="text" id="user" name="user">
+        <input type="text" rows=100 id="user" name="user">
         <label for="message">Message: </label>
-        <input type="textarea" id="message" name="message">
+        <textarea type="textarea" id="message" name="message">
+        </textarea>
         <button type="submit">Submit Your Message</button>
      </form>
      <a href="/">Change Your Mind? Go Back Home</a>
