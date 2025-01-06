@@ -6,19 +6,19 @@ const messages = [
       id: crypto.randomUUID(),
       text: "My mama always said life was like a box of chocolates. You never know what you're gonna get.",
       user: "Forrest Gump",
-      added: new Date().toDateString(),
+      added: new Date(),
     },
     {
       id: crypto.randomUUID(),
       text: "You talking to me?",
       user: "Travis",
-      added: new Date().toDateString(),
+      added: new Date(),
     },
     {
       id: crypto.randomUUID(),
       text: "I'm scared, alright?!",
       user: "Rocky",
-      added: new Date().toDateString(),
+      added: new Date(),
     }
   ];
 
