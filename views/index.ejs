@@ -14,10 +14,10 @@
     <% messages.map((message) => { %>
         <div class="messageCard">
             <div class="messageContent">
-            <div class="text"><%= message.text %></div>
+            <div class="text"><%= message.message %></div>
             <div class="tag-line">
-                <div class="user"><%= message.user %></div>
-                <div class="date"><%= message.added %></div>
+                <div class="user"><%= message.username %></div>
+                <div class="date"><%= message.dateadded %></div>
             </div>
             </div>
             <a href="/message/<%= message.id %>">Open message in new window</a>

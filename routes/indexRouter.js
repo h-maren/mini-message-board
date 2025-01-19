@@ -1,30 +1,8 @@
 const { Router } = require("express");
 const indexRouter= Router(); 
+const messageController = require("../controllers/messageController");
 
-const messages = [
-    {
-      id: crypto.randomUUID(),
-      text: "My mama always said life was like a box of chocolates. You never know what you're gonna get.",
-      user: "Forrest Gump",
-      added: new Date(),
-    },
-    {
-      id: crypto.randomUUID(),
-      text: "You talking to me?",
-      user: "Travis",
-      added: new Date(),
-    },
-    {
-      id: crypto.randomUUID(),
-      text: "I'm scared, alright?!",
-      user: "Rocky",
-      added: new Date(),
-    }
-  ];
-
-indexRouter.get("/", (req,res) => {
-    res.render('index', {title: "Mini Message Board", messages: messages});
-});
+indexRouter.get("/", messageController.getAllMessages);
 
 indexRouter.get("/new", (req, res) => {
     res.render('form', {title: "Submit New Message"});
