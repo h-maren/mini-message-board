@@ -8,6 +8,23 @@ async function getAllMessages(req, res) {
     });
 };
 
+async function messageCreateGetForm(req, res) {
+    res.render("form", {
+      title: "Submit New Message"
+    });
+};
+
+async function selectedMessageShow(req,res){
+    const messageID=req.params.id;
+    const selectedMessage = await db.getSelectedMessage(messageID);
+    res.render('message', {
+        title: "Selected Message Details:",
+        message: selectedMessage,
+        });
+    };
+
 module.exports = {
-    getAllMessages
+    getAllMessages,
+    messageCreateGetForm,
+    selectedMessageShow
   };

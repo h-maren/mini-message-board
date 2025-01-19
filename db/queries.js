@@ -6,7 +6,13 @@ async function getAllMessages() {
     return rows;
 }
 
+async function getSelectedMessage(messageID){
+    const { rows }= await pool.query("SELECT * FROM messages WHERE id=$1",[messageID]);
+    return rows[0];
+}
+
 module.exports = {
-    getAllMessages
+    getAllMessages,
+    getSelectedMessage
 };
   
