@@ -23,8 +23,16 @@ async function selectedMessageShow(req,res){
         });
     };
 
+async function addMessage(req,res){
+    const message=req.body.message;
+    const username=req.body.username;
+     await db.addSelectedMessage(message,username);
+     res.redirect('/');
+};
+
 module.exports = {
     getAllMessages,
     messageCreateGetForm,
-    selectedMessageShow
+    selectedMessageShow,
+    addMessage,
   };

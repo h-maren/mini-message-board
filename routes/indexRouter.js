@@ -6,9 +6,6 @@ indexRouter.get("/", messageController.getAllMessages);
 indexRouter.get("/new", messageController.messageCreateGetForm);
 indexRouter.get("/message/:id", messageController.selectedMessageShow);
 
-indexRouter.post('/new', (req,res)=> {
-    messages.push({ id: crypto.randomUUID(), text: req.body.message, user: req.body.user, added: new Date() });
-    res.redirect('/');
-})
+indexRouter.post('/new',messageController.addMessage);
 
 module.exports = indexRouter;
