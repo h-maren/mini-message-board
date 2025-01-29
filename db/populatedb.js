@@ -21,10 +21,9 @@ VALUES
 async function main() {
     console.log("seeding...");
     const client = new Client({
-      /*
-      host: "localhost", // or wherever the db is hosted
-      user: process.env.ROLE,
-      database: "messageboard",
+      host: "postgres.railway.internal", // or wherever the db is hosted
+      user: "postgres",
+      database: "railway",
       password: process.env.PASSWORD,
       port: 5432 // The default port*/
       connectionString:"postgresql://postgres:hereispassword@postgres.railway.internal:5432/railway",
