@@ -5,11 +5,10 @@ require("dotenv").config();
 // All of the following properties should be read from environment variables
 // We're hardcoding them here for simplicity
 module.exports = new Pool({
-    /*
-    host: "localhost", // or wherever the db is hosted
+    host: process.env.HOST, // or wherever the db is hosted
     user: process.env.ROLE,
-    database: "messageboard",
+    database: process.env.DATABASE,
     password: process.env.PASSWORD,
-    port: 5432 // The default port*/
-    connectionString:"postgresql://postgres:hereispassword@postgres.railway.internal:5432/railway",
+    connectionString: process.env.DATABASE_URL,
+    port: process.env.PORT // The default port*/
 });
