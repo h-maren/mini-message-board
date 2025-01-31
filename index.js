@@ -15,6 +15,6 @@ app.use('/', indexRouter);
 
 
 const PORT = 3000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0' () => {
     console.log(`This is the mini message app - listening on ${PORT}!`);
 });
